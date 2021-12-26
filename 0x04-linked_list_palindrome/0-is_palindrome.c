@@ -13,7 +13,7 @@ int helper(listint_t **left, listint_t *right)
 		return (1);
 
 	/* Recursion */
-	if (!is_palindrome_helper(left, right->next))
+	if (!helper(left, right->next))
 		return (0);
 
 	/* Check if left and right nodes are equal */
