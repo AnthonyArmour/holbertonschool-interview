@@ -1,4 +1,6 @@
-#include "slide_line.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /**
  * reverse - reverses an array in place 
@@ -32,9 +34,9 @@ int slide_line(int *line, size_t size, int direction)
     int tmp[size];
     int i, tmp_idx = 0, num1 = 0;
 
-    if (direction == SLIDE_RIGHT)
+    if (direction == 44)
         reverse(line, (int)size);
-    else if (direction != SLIDE_LEFT)
+    else if (direction != 33)
         return (0);
 
     memset(tmp, 0, (size)*sizeof(int));
@@ -63,7 +65,7 @@ int slide_line(int *line, size_t size, int direction)
             tmp[tmp_idx] = num1;
     }
 
-    if (direction == SLIDE_RIGHT)
+    if (direction == 44)
         reverse(tmp, (int)size);
 
     memcpy(line, tmp, (int)size*sizeof(int));
