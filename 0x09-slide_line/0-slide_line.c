@@ -47,7 +47,12 @@ int slide_line(int *line, size_t size, int direction)
     for (i = 0; i < (int)size; i++)
     {
         if (line[i] == 0)
-            continue;
+        {
+            if (i == (int)size - 1)
+                tmp[tmp_idx] = num1;
+            else
+                continue;
+        }
 
         if (num1 == 0)
             num1 = line[i];
