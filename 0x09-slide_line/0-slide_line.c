@@ -41,7 +41,8 @@ int slide_line(int *line, size_t size, int direction)
     else if (direction != 33)
         return (0);
 
-    memset(tmp, 0, (size)*sizeof(int));
+    for (i = 0; i < size; i++)
+        tmp[i] = 0;
 
     for (i = 0; i < (int)size; i++)
     {
