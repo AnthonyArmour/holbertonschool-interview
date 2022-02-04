@@ -33,7 +33,7 @@ void reverse(int *arr, int size)
  */
 int slide_line(int *line, size_t size, int direction)
 {
-    int *tmp;
+    int tmp[(int)size];
     int i, tmp_idx = 0, num1 = 0;
 
     if (direction == 44)
@@ -41,7 +41,7 @@ int slide_line(int *line, size_t size, int direction)
     else if (direction != 33)
         return (0);
 
-    for (i = 0; i < size; i++)
+    for (i = 0; i < (int)size; i++)
         tmp[i] = 0;
 
     for (i = 0; i < (int)size; i++)
