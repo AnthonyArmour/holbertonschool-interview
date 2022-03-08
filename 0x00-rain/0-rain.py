@@ -18,6 +18,7 @@ def pop_ends(walls):
 
     return walls
 
+
 def rain(walls):
     """
     Problem Prompt:
