@@ -10,6 +10,10 @@ def pop_ends(walls):
     Pops zeros from the ends of the list.
     """
 
+    
+    if len(walls) == 0:
+        return walls
+
     while walls[-1] == 0:
         walls.pop(-1)
 
