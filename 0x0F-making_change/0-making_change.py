@@ -44,7 +44,6 @@ def makeChange(coins, total):
 
         return
 
-
     coins = sorted(coins, reverse=True)
 
     for i, coin in enumerate(coins):
