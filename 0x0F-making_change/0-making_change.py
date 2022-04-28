@@ -16,16 +16,18 @@ def recurse(coins, total):
 
     ctotal, cnt = total, 0
 
-    for coin in sorted(coins, reverse=True):
-        if ctotal == 0:
-            return cnt
+    for coin in coins:
         if coin <= ctotal:
             amt = int(ctotal / coin)
             ctotal -= coin * amt
             cnt += amt
 
+        if ctotal == 0:
+            return cnt
+
     coins.pop(0)
     return recurse(coins, total)
+
 
 def makeChange(coins, total):
     """
@@ -39,6 +41,9 @@ def makeChange(coins, total):
     Return: Smallest possible number of coins, else -1
     """
 
+    if total <= 0:
+        return 0
+
     coins = sorted(coins, reverse=True)
 
     return recurse(coins, total)
@@ -48,3 +53,5 @@ if __name__ == "__main__":
 
     print(makeChange([1, 2, 25], 37))
     print(makeChange([1256, 54, 48, 16, 102], 1453))
+    print(makeChange([1, 2, 10], 11))
+    print(makeChange([1, 4, 5, 10], 1278652))
