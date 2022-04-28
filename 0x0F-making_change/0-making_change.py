@@ -6,6 +6,27 @@ coins to make the total ammount.
 """
 
 
+def recurse(coins, total):
+    """
+    Recursive search for change.
+    """
+
+    if len(coins) == 0:
+        return -1
+
+    ctotal, cnt = total, 0
+
+    for coin in sorted(coins, reverse=True):
+        if ctotal == 0:
+            return cnt
+        if coin <= ctotal:
+            amt = int(ctotal / coin)
+            ctotal -= coin * amt
+            cnt += amt
+
+    coins.pop(0)
+    return recurse(coins, total)
+
 def makeChange(coins, total):
     """
     Given a pile of coins of different values, determine the
@@ -18,17 +39,9 @@ def makeChange(coins, total):
     Return: Smallest possible number of coins, else -1
     """
 
-    cnt = 0
+    coins = sorted(coins, reverse=True)
 
-    for coin in sorted(coins, reverse=True):
-        if total == 0:
-            return cnt
-        if coin <= total:
-            amt = int(total / coin)
-            total -= coin * amt
-            cnt += amt
-
-    return -1
+    return recurse(coins, total)
 
 
 if __name__ == "__main__":
