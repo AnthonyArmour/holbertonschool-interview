@@ -60,9 +60,9 @@ def makeChange(coins, total):
 
 if __name__ == "__main__":
 
-    # print(makeChange([1, 2, 25], 37))
-    # print(makeChange([1256, 54, 48, 16, 102], 1453))
-    # print(makeChange([1, 2, 10], 11))
+    print(makeChange([1, 2, 25], 37))
+    print(makeChange([1256, 54, 48, 16, 102], 1453))
+    print(makeChange([1, 2, 10], 11))
     print(makeChange([200, 6, 5, 4, 3], 413))
     print(makeChange([500, 300, 200, 6, 5, 4, 3], 1413))
     print(makeChange([507, 500, 300, 200, 6, 5, 4, 3], 1413))
