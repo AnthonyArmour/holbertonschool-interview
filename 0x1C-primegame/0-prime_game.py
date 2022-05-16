@@ -31,7 +31,7 @@ class PrimeGame():
     def removeMultiples(self, x):
         """Removes multiples of x from num list"""
         self.list.pop(self.list.index(x))
-        for val in range(x+x, max(self.list), x):
+        for val in range(x+x, max(self.list)+1, x):
             self.list.pop(self.list.index(val))
 
     def makeMove(self):
@@ -73,7 +73,7 @@ class PrimeGame():
             done = self.makeMove()
             turn *= -1
 
-        return players[-1*turn]
+        return players[turn]
 
 
 def isWinner(x, nums):
@@ -102,3 +102,4 @@ def isWinner(x, nums):
 
 if __name__ == "__main__":
     print("Winner: {}".format(isWinner(3, [4, 5, 1])))
+    print("Winner: {}".format(isWinner(5, [2, 5, 1, 4, 3])))
