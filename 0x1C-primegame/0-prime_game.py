@@ -133,6 +133,9 @@ def isWinner(x, nums):
 
     """
 
+    if x <= 0:
+        return None
+
     game = PrimeGame(nums, x)
     game.playGames()
 
