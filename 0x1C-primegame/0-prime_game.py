@@ -135,7 +135,6 @@ def isWinner(x, nums):
 
     game = PrimeGame(nums, x)
     game.playGames()
-    print(game.games)
 
     if game.games[1] > game.games[-1]:
         return "Maria"
